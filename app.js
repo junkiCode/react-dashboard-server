@@ -15,7 +15,3 @@ services(app);
 const server = http.createServer(app);
 const port = process.env.PORT || 9000;
 server.listen(port, console.log(`Server running on ${port} port`));
-
-app.use("/default", async (_, res) => {
-  res.send("Lol, don't fuck with me");
-});

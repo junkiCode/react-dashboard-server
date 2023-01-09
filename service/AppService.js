@@ -51,10 +51,7 @@ export default function services(app) {
     res.send(rechartData[nodeName]);
   });
 
-  app.use((err, req, res, next) => {
-    console.log(err);
-    res
-      .status(500)
-      .send({ message: "Lol, your requsted api dosen't exist!!!" });
+  app.use((req, res, next) => {
+    res.status(404).send("Your requested url doesn't exist")
   });
 }
